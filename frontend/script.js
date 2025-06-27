@@ -1,7 +1,8 @@
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loader");
+// script.js
+window.addEventListener('load', () => {
   setTimeout(() => {
-    loader.style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-  }, 10000);
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+    document.getElementById('auth-container').style.display = 'block';
+  }, 10000); // 10 seconds
 });

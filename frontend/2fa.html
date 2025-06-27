@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="UTF-8" />
+  <title>2FA Verification</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="loader"></div>
-  <div class="auth-form" id="main-content" style="display:none;">
-    <h2>2FA Verification</h2>
+  <div class="login-box">
+    <h2>Two-Factor Authentication</h2>
     <form method="POST" action="verify_2fa.php">
       <input type="text" name="code" placeholder="Enter 2FA Code" required />
-      <button type="submit">Verify</button>
+      <button type="submit" class="login-btn">Verify</button>
     </form>
+    <a href="login.html">Back to login</a>
   </div>
 </body>
 </html>
+

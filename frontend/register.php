@@ -1,12 +1,15 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "auth_demo");
+require 'db.php';
 
-$username = $_POST['username'];
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-$stmt->bind_param("sss", $username, $email, $password);
-$stmt->execute();
-
-echo "Registration successful.";
+$stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+try {
+  $stmt->execute([$name, $email, $password]);
+  header("Location: index.html");
+} catch (PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+?>

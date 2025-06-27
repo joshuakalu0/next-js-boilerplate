@@ -1,5 +1,5 @@
 <?php
-// Use Composer: `composer require google/apiclient`
+/* Use Composer: `composer require google/apiclient`
 require_once 'vendor/autoload.php';
 
 $client = new Google_Client();
@@ -19,3 +19,4 @@ if (!isset($_GET['code'])) {
     $user = $oauth->userinfo->get();
     echo "Logged in as: " . $user->email;
 }
+*/
